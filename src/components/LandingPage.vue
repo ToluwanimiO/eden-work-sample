@@ -39,30 +39,31 @@ export default {
     color:white;
     font-size:60px;
     padding-top:25%;
+    font-weight:600;
 }
 .backdrop{
     background-image:url("../assets/backdrop.jpg");
     height:100vh;
-    background-position:center center;
+    background-position:top center;
     background-size:cover;
     /* background-attachment:fixed; */
     background-repeat: no-repeat;
 }
 .padLeft{
-    padding-left:7%
+    padding-left:6%
 }
 .text2{
     padding:3% 0px 2%;
     font-weight: 600;
     font-size:20px;
-    color:rgb(61, 60, 60)
+    color:#3F6775
 }
 .btn-search{
     /* margin-top:8%; */
     font-size:20px;
     color:white;
     border-radius:25px;
-    background-color: rgb(223, 29, 62);
+    background-color: #D90368;
     width:100%;
     font-weight: 500;
     /* padding-left:50px;
@@ -72,5 +73,7 @@ export default {
     /* width:fit-content; */
     border-radius:0%;
     font-size:20px;
+    color:#3F6775;
+    /* changing select arrow */
 }
 </style>
