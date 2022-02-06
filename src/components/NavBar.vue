@@ -43,7 +43,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .nav-bar{
-    background: rgba(0,0,0,0.36);
+    background: rgba(26,40,45,0.7);
     position:fixed;
     color:white
 }

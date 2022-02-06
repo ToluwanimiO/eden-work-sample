@@ -16,9 +16,9 @@
                 <option>Bulldog</option>
                 <option>Bulldog</option>
             </select><br/>
-            <btn class="btn btn-search">
+            <button class="btn btn-search">
                 SEARCH
-            </btn>
+            </button>
         </div>
         
     </div>
