@@ -109,7 +109,7 @@ export default {
     }
     .info {
       color:white;
-      font-size:20px;
+      font-size:15px;
       font-weight: 500;
       transition: .5s ease;
       opacity: 0;
@@ -121,7 +121,7 @@ export default {
       text-align: center;
     }
     .btn-more{
-      font-size:18px;
+      font-size:15px;
       color:#3F6775;
       border-radius:15px;
       /* width:fit-content; */
@@ -129,7 +129,7 @@ export default {
       text-align:center;
       border:0px;
       outline:none;
-      padding: 4px 12px 4px 12px;
+      padding: 2px 8px 2px 8px;
     }
     .style-link,.style-link:hover{
       text-decoration: none;
