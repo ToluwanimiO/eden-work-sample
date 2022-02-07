@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import DogInfo from '../components/DogInfo.vue'
 import Home from '../components/Home.vue'
+import Search from '../components/Search.vue'
 Vue.use(VueRouter)
 
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/dog-info',
     name: 'DogInfo',
     component: DogInfo
+  },
+  {
+    path: '/search',
+    name: 'Search',
+    component: Search
   },
  
 ]

@@ -5,7 +5,7 @@
                 <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarForPets">
-                <ul class="navbar-nav ml-auto ">
+                <ul class="navbar-nav ml-auto text-center">
                     <li class="nav-item ">
                         <a class="nav-link" href="#">FOOD </a>
                     </li>

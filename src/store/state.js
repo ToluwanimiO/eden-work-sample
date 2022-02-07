@@ -1,3 +1,5 @@
 export const state = {
-    dogImages:[]
+    dogImages:[],
+    breeds:{},
+    searchResults:[]
   };

@@ -25,7 +25,7 @@ export default {
   },
   computed: {
 		dogImages () {
-      console.log(this.$store.state.dogImages)
+      // console.log(this.$store.state.dogImages)
 			return this.$store.state.dogImages;
 		}      
 	},
