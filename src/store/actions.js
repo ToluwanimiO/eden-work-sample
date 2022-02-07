@@ -31,18 +31,14 @@ export const actions = {
     }
   },
   GET_SEARCHRESULTS({commit},searchItem){
-    if (localStorage.getItem("searchItem") == searchItem.searchItem && localStorage.getItem("searchResults")){
-      commit('SET_SEARCHRESULTS' , JSON.parse(localStorage.getItem("searchResults")));
-    }
-    else{
+
       axios.get(`${API_URL}breed/${searchItem.searchItem}/images`)
 			.then(response=>
 			{
 				console.log(response)
         commit('SET_SEARCHRESULTS' , response.data.message);
-        localStorage.setItem("searchResults",JSON.stringify(response.data.message))
 			})
-    }
+
   },
   GET_BREEDS({commit}){
     if(localStorage.getItem("breeds")){
