@@ -12,6 +12,9 @@ export const mutations = {
         }
         localStorage.setItem("images",JSON.stringify(state.dogImages))
       },
+      RESET_IMAGES(state , payload){
+          state.dogImages = payload; 
+      },
       SET_BREEDS(state , payload){
           state.breeds = payload; 
       },

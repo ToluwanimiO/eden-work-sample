@@ -31,9 +31,9 @@ export default {
 	},
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
-      // this.$store.dispatch('GET_IMAGES',"more").then(() => {
+      this.$store.dispatch('GET_IMAGES',"complete").then(() => {
 		
-      // })
+      })
     })
   },
   methods:{
@@ -63,7 +63,7 @@ export default {
     width: 100%;
     overflow: hidden;
     /* margin-bottom: -1.875em; */
-    -webkit-column-count: 2;
+    -webkit-column-count: 3;
     /* -webkit-column-gap: 1em; */
     -webkit-column-fill: auto;
     -moz-column-count: 2;

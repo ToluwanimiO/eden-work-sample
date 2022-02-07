@@ -2,9 +2,9 @@
   <div class="top-margin">
       <div class="container">
           <router-link to="/" class="fa fa-arrow-left arrow-style"></router-link>
-          <div class="row flex-container">
-                <div class="text-center mb-4"><img :src="imageUrl" class="style-image"/></div>
-              <div class="col-lg-4 col-sm-12 ml-3 general-text">
+          <div class=" flex-container row">
+                <div class="col-lg-7 text-center mb-4"><img :src="imageUrl" class="style-image"/></div>
+              <div class="col-lg-4 col-sm-12 general-text">
                   <p class="heading mb-3">Meet Alvin</p>
                   <div class="heading-text">ALVIN'S BIO</div>
                   <div><span class="deepen">Breed:</span> {{imageUrl | retrieveBreed}}</div>
@@ -115,6 +115,9 @@ export default {
     justify-content: center;
     align-items: center;
   }
+    .style-image{
+      width: 80%;
+    }
   @media (max-width:992px) {
     .style-image{
       width: 80%;

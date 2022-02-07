@@ -21,9 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#">ASK A VET</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link " href="#"><input type="text" class="nav-search" placeholder="SEARCH "/></a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </nav>

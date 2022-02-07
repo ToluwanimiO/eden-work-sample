@@ -2,7 +2,8 @@ import axios from 'axios';
 const API_URL = "https://dog.ceo/api/";
 export const actions = {
   GET_IMAGES({commit},more){
-    if(more){
+    // alert(JSON.parse(localStorage.getItem("images")).length)
+    if(more=="more"){
       axios.get(`${API_URL}breeds/image/random/50`)
 			.then(response=>
 			{
@@ -10,23 +11,16 @@ export const actions = {
         commit('SET_IMAGES' , response.data.message);
 			})
     }
-    else if(!(localStorage.getItem("images"))){
+    else if(!(localStorage.getItem("images")) || parseInt(JSON.parse(localStorage.getItem("images")).length)<=50){
       axios.get(`${API_URL}breeds/image/random/50`)
 			.then(response=>
 			{
 				// console.log(response)
         commit('SET_IMAGES' , response.data.message);
-        axios.get(`${API_URL}breeds/image/random/50`)
-        .then(resp=>
-        {
-          // console.log(response)
-          commit('SET_IMAGES' , resp.data.message);
-          
-        })
 			})
     }
     else{
-      commit('SET_IMAGES' , JSON.parse(localStorage.getItem("images")));
+      commit('RESET_IMAGES', JSON.parse(localStorage.getItem("images")));
 
     }
   },
