@@ -4,14 +4,14 @@
         <div id="list">
             <div class="item" v-for="(item,index) in dogImages" :key="index">
                 <img :src="item" height="auto" width="100%" class="style-image"/>
+                <div class="info">
+                  <p>{{item | retrieveBreed}}</p>
+                  <button class="btn-more"><router-link :to="{ name: 'DogInfo', params: { url:item }}"  class="style-link">View more</router-link></button>
+                  
+                </div>
             </div>
-            <!-- <div class="col-md-4">
-                <img src="../assets/logo.png" height="auto" width="100%" />
-            </div>
-            <div class="col-md-4">
-                <img src="../assets/logo.png" height="auto" width="100%" />
-            </div> -->
         </div>
+        <div class="text-center"><span class="fa fa-angle-down style-angle" @click="seeMore" ></span></div>
     </div>
 </template>
 
@@ -25,13 +25,32 @@ export default {
   },
   computed: {
 		dogImages () {
+      console.log(this.$store.state.dogImages)
 			return this.$store.state.dogImages;
 		}      
 	},
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
-		// ...
+      this.$store.dispatch('GET_IMAGES').then(() => {
+		
+      })
     })
+  },
+  methods:{
+    seeMore:function()
+    {
+        this.$store.dispatch('GET_IMAGES').then(() => {
+      
+        })
+    }
+  },
+  filters: {
+    retrieveBreed: function (value) {
+      value = value.substring(30)
+      let slashPosition = value.indexOf("/") 
+      value = value.substring(0,slashPosition)
+      return value
+    }
   }
 }
 
@@ -54,6 +73,7 @@ export default {
     column-fill: auto;
     }
     .item {
+      position: relative;
         margin-bottom: 1.875em;
         -webkit-column-break-inside: avoid;
         -moz-column-break-inside: avoid;
@@ -70,4 +90,48 @@ export default {
         margin-top:10%;
         margin-bottom:7%;
     }
+    .style-angle{
+      font-weight: 600;
+      font-size:60px;
+      margin: 20px 0px 0px 20px;
+      color: #74929c;
+      cursor: pointer;
+    }
+    .item:hover .style-image {
+      -webkit-filter: brightness(50%);
+      /* opacity: 0.6;
+      background: rgba(0,0,0,.5); */
+    }
+
+    .item:hover .info {
+      opacity: 1;
+    }
+    .info {
+      color:white;
+      font-size:25px;
+      font-weight: 500;
+      transition: .5s ease;
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .btn-more{
+      font-size:18px;
+      color:#3F6775;
+      border-radius:25px;
+      /* width:fit-content; */
+      font-weight: 500;
+      text-align:center;
+      border:0px;
+      outline:none;
+      padding: 5px 15px 5px 15px;
+    }
+    .style-link,.style-link:hover{
+      text-decoration: none;
+      color:#3F6775;
+      }
 </style>
