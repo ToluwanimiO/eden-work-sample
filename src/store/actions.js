@@ -17,10 +17,10 @@ export const actions = {
 				// console.log(response)
         commit('SET_IMAGES' , response.data.message);
         axios.get(`${API_URL}breeds/image/random/50`)
-        .then(response=>
+        .then(resp=>
         {
           // console.log(response)
-          commit('SET_IMAGES' , response.data.message);
+          commit('SET_IMAGES' , resp.data.message);
           
         })
 			})
