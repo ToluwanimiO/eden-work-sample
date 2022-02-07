@@ -10,6 +10,7 @@ export const mutations = {
         {
           state.dogImages = payload; 
         }
+        localStorage.setItem("images",JSON.stringify(state.dogImages))
       },
       SET_BREEDS(state , payload){
           state.breeds = payload; 

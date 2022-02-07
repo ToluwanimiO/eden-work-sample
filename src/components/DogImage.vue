@@ -25,21 +25,21 @@ export default {
   },
   computed: {
 		dogImages () {
-      // console.log(this.$store.state.dogImages)
+      console.log(this.$store.state.dogImages)
 			return this.$store.state.dogImages;
 		}      
 	},
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
-      this.$store.dispatch('GET_IMAGES').then(() => {
+      // this.$store.dispatch('GET_IMAGES',"more").then(() => {
 		
-      })
+      // })
     })
   },
   methods:{
     seeMore:function()
     {
-        this.$store.dispatch('GET_IMAGES').then(() => {
+        this.$store.dispatch('GET_IMAGES',"more").then(() => {
       
         })
     }
@@ -63,7 +63,7 @@ export default {
     width: 100%;
     overflow: hidden;
     /* margin-bottom: -1.875em; */
-    -webkit-column-count: 3;
+    -webkit-column-count: 2;
     /* -webkit-column-gap: 1em; */
     -webkit-column-fill: auto;
     -moz-column-count: 2;

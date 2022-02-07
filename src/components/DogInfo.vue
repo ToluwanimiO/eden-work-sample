@@ -42,7 +42,7 @@ export default {
         }      
     },
   created:function(){
-      console.log(this.$route.params.url,"jj")
+      // console.log(this.$route.params.url,"jj")
         if(this.$route.params.url){
             localStorage.setItem("url",this.$route.params.url)
         }
