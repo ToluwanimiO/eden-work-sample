@@ -121,7 +121,7 @@ export default {
       text-align: center;
     }
     .btn-more{
-      font-size:15px;
+      font-size:13px;
       color:#3F6775;
       border-radius:15px;
       /* width:fit-content; */
@@ -129,7 +129,7 @@ export default {
       text-align:center;
       border:0px;
       outline:none;
-      padding: 2px 8px 2px 8px;
+      padding: 1px 5px 1px 5px;
     }
     .style-link,.style-link:hover{
       text-decoration: none;
