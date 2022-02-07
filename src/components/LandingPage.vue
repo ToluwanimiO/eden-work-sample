@@ -10,7 +10,7 @@
                 We can help find your future best buddie by breed.
             </p>
         </div>
-        <div class="col-md-3 padLeft">
+        <div class="col-md-4 col-lg-3 padLeft">
             <select class="form-control styled-select" v-model="selected">
                 <option value="" selected disabled>-- Select a breed --</option>
                 <option v-for="(item,index) in breeds" :key="index">{{index}}</option>
@@ -61,7 +61,7 @@ export default {
     }
     .backdrop{
         background-color: #0A8BB2;
-        height:100vh;
+        /* height:100vh; */
     }
 @media (min-width:788px) {
     
@@ -73,7 +73,7 @@ export default {
     }
     .backdrop{
         background-image:url("../assets/backdrop.jpg");
-        height:100vh;
+        /* height:100vh; */
         background-position:top center;
         background-size:cover;
         /* background-attachment:fixed; */
@@ -96,7 +96,7 @@ export default {
     color:#12323d
 }
 .btn-search{
-    /* margin-top:8%; */
+    margin-bottom:15%;
     font-size:20px;
     color:white;
     border-radius:25px;

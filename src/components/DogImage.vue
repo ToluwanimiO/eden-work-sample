@@ -58,29 +58,30 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    #list {
+
+#list {
     width: 100%;
     overflow: hidden;
-    margin-bottom: -1.875em;
+    /* margin-bottom: -1.875em; */
     -webkit-column-count: 3;
-    -webkit-column-gap: 1.875em;
+    /* -webkit-column-gap: 1em; */
     -webkit-column-fill: auto;
-    -moz-column-count: 3;
-    -moz-column-gap: 1.875em;
+    -moz-column-count: 2;
+    /* -moz-column-gap: 1em; */
     -moz-column-fill: auto;
-    column-count: 3;
-    column-gap: 1.875em;
+    column-count: 2;
+    /* column-gap: 1.875em; */
     column-fill: auto;
     }
     .item {
       position: relative;
-        margin-bottom: 1.875em;
+        margin-bottom: 1em;
         -webkit-column-break-inside: avoid;
         -moz-column-break-inside: avoid;
         /* column-break-inside: avoid; */
     }
     .style-image{
-        border-radius:40px;
+        border-radius:20px;
     }
     .meet-text{
         color:#3F6775;
@@ -108,7 +109,7 @@ export default {
     }
     .info {
       color:white;
-      font-size:25px;
+      font-size:20px;
       font-weight: 500;
       transition: .5s ease;
       opacity: 0;
@@ -122,16 +123,50 @@ export default {
     .btn-more{
       font-size:18px;
       color:#3F6775;
-      border-radius:25px;
+      border-radius:15px;
       /* width:fit-content; */
       font-weight: 500;
       text-align:center;
       border:0px;
       outline:none;
-      padding: 5px 15px 5px 15px;
+      padding: 4px 12px 4px 12px;
     }
     .style-link,.style-link:hover{
       text-decoration: none;
       color:#3F6775;
       }
+      @media (min-width:788px) {
+        .btn-more{
+      border-radius:25px;
+      /* width:fit-content; */
+      padding: 5px 15px 5px 15px;
+    }
+        .info{
+          font-size: 25px;
+        }
+    #list {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: -1.875em;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 1.875em;
+    -webkit-column-fill: auto;
+    -moz-column-count: 3;
+    -moz-column-gap: 1.875em;
+    -moz-column-fill: auto;
+    column-count: 3;
+    column-gap: 1.875em;
+    column-fill: auto;
+    }
+    .item {
+      position: relative;
+        margin-bottom: 1.875em;
+        -webkit-column-break-inside: avoid;
+        -moz-column-break-inside: avoid;
+        /* column-break-inside: avoid; */
+    }
+    .style-image{
+        border-radius:30px;
+    }
+}
 </style>
