@@ -3,7 +3,7 @@
       <div class="container">
           <router-link to="/" class="fa fa-arrow-left arrow-style"></router-link>
           <div class="row flex-container">
-                <div class="text-center"><img :src="imageUrl" class="style-image"/></div>
+                <div class="text-center mb-4"><img :src="imageUrl" class="style-image"/></div>
               <div class="col-lg-4 col-sm-12 ml-3 general-text">
                   <p class="heading mb-3">Meet Alvin</p>
                   <div class="heading-text">ALVIN'S BIO</div>
@@ -15,7 +15,7 @@
                   <div style="line-height:1.4em">She was found under Yaba bridge in 2019 and we have been together ever since then.
                       She needs to find a buddy, can it be you?
                   </div>               
-                <div class="text-center mt-4"><button class="btn-buddy">Let's be buddies</button>  </div>
+                <div class="text-center mt-4"><button class="btn-buddy mb-4">Let's be buddies</button>  </div>
               </div>
           </div>
           
