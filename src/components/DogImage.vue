@@ -2,21 +2,23 @@
     <div class="container">
         <p class="meet-text">MEET OUR BUDDIES</p>
         <div id="list">
-            <div class="item" v-for="(item,index) in dogImages" :key="index">
-                <img :src="item" height="auto" width="100%" class="style-image"/>
+            <span class="item" v-for="(item,index) in dogImages" :key="index">
+              <!-- <img src="../assets/logo.png" /> -->
+                <img :src="item" height="auto" width="200px" class=" d-none d-md-block style-image"/>
+                <img :src="item" height="auto" width="150px" class="style-image d-block d-md-none"/>
                 <div class="info">
                   <p>{{item | retrieveBreed}}</p>
                   <button class="btn-more"><router-link :to="{ name: 'DogInfo', params: { url:item }}"  class="style-link">View more</router-link></button>
                   
                 </div>
-            </div>
+            </span>
         </div>
         <div class="text-center"><span class="fa fa-angle-down style-angle" @click="seeMore" ></span></div>
     </div>
 </template>
 
 <script>
-// import Masonry from 'masonry-layout';
+import Masonry from 'masonry-layout';
 export default {
   name: 'DogImage',
   data(){
@@ -30,16 +32,16 @@ export default {
 			return this.$store.state.dogImages;
 		}      
 	},
-  // mounted:function(){
-    // made an attempt on masonry layout
-  //   var elem = this.$el.querySelector('#list');
-  //   var msnry = new Masonry( elem, {
-  //     // options
-  //     itemSelector: '.item',
-  //     columnWidth: 200
-  //   });
-  //   console.log(msnry)
-  // },
+  mounted:function(){
+    var elem = this.$el.querySelector('#list');
+    var msnry = new Masonry( elem, {
+      // options
+      itemSelector: '.item',
+      gutter:20,
+      // columnWidth: 350
+    });
+    console.log(msnry)
+  },
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
       this.$store.dispatch('GET_IMAGES',"complete").then(() => {
@@ -70,26 +72,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-#list {
-    width: 100%;
-    overflow: hidden;
-    /* margin-bottom: -1.875em; */
-    -webkit-column-count: 3;
-    /* -webkit-column-gap: 1em; */
-    -webkit-column-fill: auto;
-    -moz-column-count: 2;
-    /* -moz-column-gap: 1em; */
-    -moz-column-fill: auto;
-    column-count: 2;
-    /* column-gap: 1.875em; */
-    column-fill: auto;
-    }
+
     .item {
       position: relative;
         margin-bottom: 1em;
-        -webkit-column-break-inside: avoid;
-        -moz-column-break-inside: avoid;
-        /* column-break-inside: avoid; */
     }
     .style-image{
         border-radius:20px;
@@ -155,29 +141,15 @@ export default {
         .info{
           font-size: 25px;
         }
-    #list {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: -1.875em;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 1.875em;
-    -webkit-column-fill: auto;
-    -moz-column-count: 3;
-    -moz-column-gap: 1.875em;
-    -moz-column-fill: auto;
-    column-count: 3;
-    column-gap: 1.875em;
-    column-fill: auto;
-    }
-    .item {
+
+    /* .item {
       position: relative;
-        margin-bottom: 1.875em;
-        -webkit-column-break-inside: avoid;
-        -moz-column-break-inside: avoid;
-        /* column-break-inside: avoid; */
-    }
+        margin-bottom: 1em;
+    } */
     .style-image{
+      /* padding: 1em; */
         border-radius:30px;
     }
 }
+
 </style>
