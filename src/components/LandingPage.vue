@@ -1,7 +1,9 @@
 <template>
     <div class="backdrop">
         <div class="col-md-7 padLeft">
+            <i class="fa fa-paw style-paw d-block d-md-none text-right" aria-hidden="true"></i>
             <h1 class="text1">
+                
                 A dog is a man's bestfriend, let's help you find yours!
             </h1>
         </div>
@@ -56,7 +58,7 @@ export default {
     .text1{
         color:white;
         font-size:50px;
-        padding-top:40%;
+        padding-top:30%;
         font-weight:600;
     }
     .backdrop{
@@ -68,7 +70,7 @@ export default {
     .text1{
         color:white;
         font-size:60px;
-        padding-top:25%;
+        padding-top:20%;
         font-weight:600;
     }
     .backdrop{
@@ -116,5 +118,10 @@ export default {
 .style-link,.style-link:hover{
       text-decoration: none;
       color:white;
+      }
+      .style-paw{
+          color:#E19F0D;
+          font-size: 7em;
+          transform: rotate(30deg);
       }
 </style>
