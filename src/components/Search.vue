@@ -29,7 +29,7 @@ export default {
         }     
     },
   created:function(){
-      console.log(this.$route.params.searchItem,"jj")
+    //   console.log(this.$route.params.searchItem,"jj")
         if(this.$route.params.searchItem){
             localStorage.setItem("searchItem",this.$route.params.searchItem)
         }

@@ -29,7 +29,7 @@ export const actions = {
       axios.get(`${API_URL}breed/${searchItem.searchItem}/images`)
 			.then(response=>
 			{
-				console.log(response)
+				// console.log(response)
         commit('SET_SEARCHRESULTS' , response.data.message);
 			})
 

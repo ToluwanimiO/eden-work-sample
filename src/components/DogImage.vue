@@ -16,6 +16,7 @@
 </template>
 
 <script>
+// import Masonry from 'masonry-layout';
 export default {
   name: 'DogImage',
   data(){
@@ -25,10 +26,20 @@ export default {
   },
   computed: {
 		dogImages () {
-      console.log(this.$store.state.dogImages)
+      // console.log(this.$store.state.dogImages)
 			return this.$store.state.dogImages;
 		}      
 	},
+  // mounted:function(){
+    // made an attempt on masonry layout
+  //   var elem = this.$el.querySelector('#list');
+  //   var msnry = new Masonry( elem, {
+  //     // options
+  //     itemSelector: '.item',
+  //     columnWidth: 200
+  //   });
+  //   console.log(msnry)
+  // },
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
       this.$store.dispatch('GET_IMAGES',"complete").then(() => {
