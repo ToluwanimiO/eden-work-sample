@@ -3,8 +3,15 @@ import router from './router'
 import App from './App.vue'
 import Vuex from 'vuex'
 import store from './store/store.js';
+import VueLazyload from 'vue-lazyload'
 
-Vue.use( Vuex/* { default global options } */)
+Vue.use( Vuex,VueLazyload, {
+  preLoad: 1.3,
+  // error: 'dist/error.png',
+  // loading: 'dist/loading.gif',
+  attempt: 1,
+  listenEvents: [ 'scroll' ]
+})
 
 Vue.config.productionTip = false
 

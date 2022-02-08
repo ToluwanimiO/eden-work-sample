@@ -1,11 +1,12 @@
 <template>
     <div class="container">
         <p class="meet-text">MEET OUR BUDDIES</p>
-        <div id="list">
-            <span class="item" v-for="(item,index) in dogImages" :key="index">
+        <Loading v-if="!loadStatus" style="margin-top:-50vh; "/>
+        <div id="list" v-if="loadStatus">
+            <span class="item" v-for="(item,index) in dogImages" :key="index" >
               <!-- <img src="../assets/logo.png" /> -->
-                <img :src="item" height="auto" width="200px" class=" d-none d-md-block style-image"/>
-                <img :src="item" height="auto" width="150px" class="style-image d-block d-md-none"/>
+                <img :src="item" :id="`image`+index" height="auto" width="200px" class=" d-none d-md-block style-image"/>
+                <img :src="item" :id="`image`+index" height="auto" width="150px" class="style-image d-block d-md-none"/>
                 <div class="info">
                   <p>{{item | retrieveBreed}}</p>
                   <button class="btn-more"><router-link :to="{ name: 'DogInfo', params: { url:item }}"  class="style-link">View more</router-link></button>
@@ -13,17 +14,23 @@
                 </div>
             </span>
         </div>
-        <div class="text-center"><span class="fa fa-angle-down style-angle" @click="seeMore" ></span></div>
+        <!-- <div class="text-center"><span class="fa fa-angle-down style-angle" @click="seeMore" ></span></div> -->
     </div>
 </template>
 
 <script>
 import Masonry from 'masonry-layout';
+import Loading from './Loading.vue'
 export default {
   name: 'DogImage',
+  components: {
+    Loading
+  },
   data(){
     return{	
 		// dogImages:this.$store.state.dogImages
+    number:0,
+    loadStatus:false
     }
   },
   computed: {
@@ -33,14 +40,21 @@ export default {
 		}      
 	},
   mounted:function(){
-    var elem = this.$el.querySelector('#list');
-    var msnry = new Masonry( elem, {
-      // options
-      itemSelector: '.item',
-      gutter:20,
-      // columnWidth: 350
-    });
+    setTimeout(()=>{
+      this.loadStatus=true
+    },4500)
+    setTimeout(() => {
+      var elem = this.$el.querySelector('#list');
+      var msnry = new Masonry( elem, {
+        // options
+        itemSelector: '.item',
+        gutter:20,
+        // columnWidth: 350
+      });
     console.log(msnry)
+    
+    }, 5000);
+    
   },
   created:function(){
     this.$store.dispatch('GET_IMAGES').then(() => {
@@ -48,6 +62,9 @@ export default {
 		
       })
     })
+    setTimeout(() => {
+      this.loadImage()
+    }, 5000);
   },
   methods:{
     seeMore:function()
@@ -55,6 +72,17 @@ export default {
         this.$store.dispatch('GET_IMAGES',"more").then(() => {
       
         })
+    },
+    loadImage:function(){
+      setTimeout(() => {
+      this.loadImage()
+      }, 5000);
+      // for (let i = 0; i < 10; i++) {
+      //   let value = this.number+i
+      //   this.$el.querySelector('#image'+value).src =this.$el.querySelector('#image'+value).dataset.url
+      // }
+      
+      // this.number+=10
     }
   },
   filters: {

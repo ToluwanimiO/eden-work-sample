@@ -49,7 +49,7 @@ export default {
 }
 h1 {
  font-family: 'Open Sans', -apple-system, 'Segoe UI', sans-serif;
- font-size: 50px;
+ font-size: 30px;
  font-weight: bold;
  color: #212121;
  box-sizing: border-box;
