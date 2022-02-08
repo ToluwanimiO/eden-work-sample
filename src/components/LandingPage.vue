@@ -123,6 +123,6 @@ export default {
           color:#E19F0D;
           font-size: 5em;
           transform: rotate(30deg);
-          margin-top: 10%;
+          padding-top: 10%;
       }
 </style>
