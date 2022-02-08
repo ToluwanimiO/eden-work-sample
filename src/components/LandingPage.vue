@@ -121,7 +121,8 @@ export default {
       }
       .style-paw{
           color:#E19F0D;
-          font-size: 7em;
+          font-size: 5em;
           transform: rotate(30deg);
+          margin-top: 10%;
       }
 </style>
